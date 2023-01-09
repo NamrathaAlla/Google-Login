@@ -1,0 +1,74 @@
+<div class="font">
+    <form [formGroup]="update">
+        <h5 class=" head"><b><i>DETAILS</i></b></h5>
+        <p-card class="task"
+            [style]="{'width': '30rem', 'margin-bottom': '510m','background-color':'rgb(220, 220, 220)' }">
+
+            <div>            
+
+            <!-- MOBILE ID -->
+            <div class="p-label">
+                <label for="inputtext"> <b>MobileId</b></label><br>
+                <input type="number" id="inputtext" pInputText [(ngModel)]="mobileid" formControlName="mobileid"
+                    placeholder="enter your MobileId"><br><br>
+
+                <div *ngIf="update.controls.mobileid.errors?.required && update.controls.mobileid.touched" style="color:red">Field
+                    must be required</div>
+            </div>
+            <!-- MobileName -->
+            <div class="p-label">
+                <label for="inputtext"><b>MobileName</b> </label><br>
+                <input type="text" id="inputtext" pInputText [(ngModel)]="mobilenm" formControlName="mobilename"
+                    placeholder="enter your mobilename"><br><br>
+
+                <!-- validations -->
+                <div *ngIf="update.controls.mobilename.errors?.required && update.controls.mobilename.touched" style="color:red">
+                    Field must be required</div>
+
+
+
+                <!-- gender -->
+                <div class="p-label">
+                    <label for="inputtext"><b>Provider</b> </label><br>
+                    <input type="text" id="inputtext" pInputText [(ngModel)]="pro" formControlName="provider"
+                        placeholder="enter your provider"><br><br>
+
+                    <!-- validations -->
+                    <div *ngIf="update.controls.provider.errors?.required && update.controls.provider.touched"
+                        style="color:red">
+                        Field must be required</div>
+
+                </div>
+
+                <!-- email -->
+                <div class="p-label">
+                    <label for="inputtext"><b>Quantity</b> </label><br>
+                    <input type="text" id="inputtext" pInputText [(ngModel)]="qty" formControlName="quantity"
+                        placeholder="enter your quantity"><br><br>
+
+                    <!-- validations -->
+                    <div *ngIf="update.controls.quantity.errors?.required && update.controls.quantity.touched"
+                        style="color:red">
+                        Field must be required</div>
+
+                </div>
+                <!-- city -->
+                <div class="p-label">
+                    <label for="inputtext"><b>Price</b> </label><br>
+                    <input type="text" id="inputtext" pInputText [(ngModel)]="prc" formControlName="price"
+                        placeholder="enter your username"><br><br>
+
+                    <!-- validations -->
+                    <div *ngIf="update.controls.price.errors?.required && update.controls.price.touched"
+                        style="color:red">
+                        Field must be required</div>
+                    <p-button label="Update Mobile" (click)="onUpdate()"></p-button>
+                    &nbsp;
+                    <p-button label="Reset" type="reset"> </p-button>
+                </div>
+
+     </div>
+            </div>
+        </p-card>
+    </form>
+</div>
